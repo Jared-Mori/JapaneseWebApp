@@ -1,5 +1,6 @@
 <script>
   export let data;
+  console.log(import.meta.env.PUBLIC_SUPABASE_URL);
 </script>
 
 <ul>
