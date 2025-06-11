@@ -1,8 +1,5 @@
 <script>
-  let { data } = $props();
-
-  // For debugging: log the data to the console
-  console.log("Loaded data:", data);
+    export let data;
 </script>
 
 {#if data && data.instruments && data.instruments.length > 0}
