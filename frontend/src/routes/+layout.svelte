@@ -1,6 +1,24 @@
-<script>
-    let { children } = $props();
+<script lang='ts'>
+  import { invalidate } from '$app/navigation'
+  import { onMount } from 'svelte'
+  let { data, children } = $props()
+  let { session, supabase } = $derived(data)
+  onMount(() => {
+    const { data } = supabase.auth.onAuthStateChange((_, newSession) => {
+      if (newSession?.expires_at !== session?.expires_at) {
+        invalidate('supabase:auth')
+      }
+    })
+    return () => data.subscription.unsubscribe()
+  })
+
 </script>
+
+<svelte:head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</svelte:head>
 
 <nav class="top-bar blank">
     <!-- for later stuff -->
@@ -10,7 +28,7 @@
 
 <style>
     :root {
-        --background: #D6D7D9;
+        --background: #e4e1c6;
         --topbar: #0B1023;
         --card-bg: #EEEEEE;
         --input-bg: #BBE4E6;
@@ -19,11 +37,13 @@
     }
     nav {
         padding: 0;
-        height: 50px;
-        width: 100%;
+        height: 6vh;
+        width: 100vw;
         text-align: center;
         background-color: var(--topbar);
         position: fixed;
+        margin: 0;
+        z-index: 1000;
         top: 0;
         left: 0;
     }
