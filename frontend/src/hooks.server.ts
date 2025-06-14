@@ -36,6 +36,7 @@ const supabase: Handle = async ({ event, resolve }) => {
       data: { session },
     } = await event.locals.supabase.auth.getSession()
     if (!session) {
+      console.warn('No session found, returning null session and user')
       return { session: null, user: null }
     }
 

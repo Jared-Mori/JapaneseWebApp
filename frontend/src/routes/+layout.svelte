@@ -3,6 +3,7 @@
   import { onMount } from 'svelte'
   let { data, children } = $props()
   let { session, supabase } = $derived(data)
+
   onMount(() => {
     const { data } = supabase.auth.onAuthStateChange((_, newSession) => {
       if (newSession?.expires_at !== session?.expires_at) {
@@ -10,8 +11,7 @@
       }
     })
     return () => data.subscription.unsubscribe()
-  })
-
+  });
 </script>
 
 <svelte:head>
@@ -20,8 +20,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 </svelte:head>
 
-<nav class="top-bar blank">
-    <!-- for later stuff -->
+<nav>
+    {#if session}
+        <a href="/">Home</a>
+        <a href="/private">Private</a>
+        <button onclick={() => supabase.auth.signOut()}>Logout</button>
+    {:else}
+        <a href="/auth">Login</a>
+    {/if}
 </nav>
 
 {@render children()}
