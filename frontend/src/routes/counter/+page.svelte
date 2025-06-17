@@ -1,5 +1,6 @@
 <script lang="ts">
   import { BindWanakana, generateQuestion, checkAnswer, type Question } from '$lib/counterGame';
+  import Card from '$lib/card.svelte';
 
   export let data: {
     nouns: { noun: string; counter_group: string }[];
@@ -78,13 +79,14 @@
 
     {#if currentQuestion}
       <div class="card">
-          <div class="section english-text">
+          <Card color=var(--color3)>
               <p id="question">
                 {displayText}
               </p>
-          </div>
-          <div class="section japanese-input">
+          </Card>
+          <Card color=var(--color4)>
               <input
+                id="input-field"
                 class:shake={shake}
                 bind:this={japaneseInputEl}
                 type="text" 
@@ -97,17 +99,16 @@
                   }
                 }}"
               >
-          </div>
-          <div class="section blank">
+          </Card>
+          <Card color=var(--color5)>
             <p id="result"></p>
-          </div>
+          </Card>
       </div>
     {/if}
 </div>
 
 <style>
   .content {
-      background-color: var(--background);
       min-height: 100vh;
       padding-top: 6vh;
       width: 100vw;
@@ -141,32 +142,7 @@
       border: none;
       box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.25);
   }
-  .section {
-      flex: 1;
-      min-height: 75px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  .english-text {
-      background-color: var(--card-bg);
-  }
-  .japanese-input {
-      background-color: var(--input-bg);
-  }
-  .blank {
-      background-color: var(--topbar);
-  }
-  .english-text p {
-      font-family: Noto Sans JP, sans-serif;
-      font-size: 24px;
-      font-weight: 400;
-      font-style: normal;
-      color: var(--header);
-      margin: 0;
-  }
-  .japanese-input input {
+  #input-field {
       width: 100%;
       text-align: center;
       background: transparent;

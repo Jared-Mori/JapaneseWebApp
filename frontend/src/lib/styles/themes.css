@@ -1,0 +1,240 @@
+/* Palette A */
+:global(.warm-spring) {
+--color1: #E03C8A; /* 今様色 Imayou-iro (Contemporary Pink) */
+--color2: #F2F2E9; /* 白練 Shironezumi (Off White) */
+--color3: #FEDFE1; /* 桜色 Sakura (Cherry Blossom Pink) */
+--color4: #FBE251; /* 黄蘗色 Kihada (Yellow) */
+--color5: #E03C8A; /* 今様色 Imayou-iro (Darkest strip) */
+}
+/* Palette B */
+:global(.forest-tranquility) {
+--color1: #2E5C58; /* 青緑 Aomidori (Blue-Green) */
+--color2: #BADCAD; /* 薄萌葱 Usumoegi (Light Sprout Green) */
+--color3: #D6E9CA; /* 白緑 Byakuroku (Pale Green) */
+--color4: #C1D8AC; /* 若竹色 Wakatake-iro (Young Bamboo) */
+--color5: #2E5C58; /* 青緑 Aomidori (Darkest strip) */
+}
+/* Palette C */
+:global(.classic-summer) {
+--color1: #9E3D3F; /* 紅 Beniiro (Crimson Red) */
+--color2: #F8F4E6; /* 白茶 Shiracha (Beige White) */
+--color3: #FADADD; /* 桃色 Momoiro (Peach Pink) */
+--color4: #FFE600; /* 黄色 Ki-iro (Bright Yellow) */
+--color5: #9E3D3F; /* 紅 Beniiro (Darkest strip) */
+}
+/* Palette D */
+:global(.deep-night) {
+--color1: #3B2F2F; /* 紫紺 Shikon (Dark Purple-Navy) */
+--color2: #E6EAE3; /* 白緑 Byakuroku (Pale Cool Green) */
+--color3: #C9D6D5; /* 薄鈍 Usunibi (Soft Grey-Green) */
+--color4: #B6BA99; /* 海松色 Miru-iro (Olive-Green) */
+--color5: #3B2F2F; /* 紫紺 Shikon (Darkest strip) */
+}
+/* Palette E */
+:global(.mountain-moss) {
+    --color1: #475C4D; /* 海松色 Miru-iro (Dark Moss Green) */
+--color2: #D9E3D4; /* 柳鼠 Yanaginezumi (Willow Gray) */
+--color3: #BFD8B8; /* 裏葉色 Uraha-iro (Underside Leaf Green) */
+--color4: #A8C9A2; /* 萌黄色 Moegi-iro (Sprout Green) */
+--color5: #475C4D; /* 海松色 Miru-iro (Darkest strip) */
+}
+/* Palette F */
+:global(.winter-bamboo) {
+    --color1: #384D48; /* 千歳緑 Chitosemidori (Aged Pine Green) */
+--color2: #C9DCCB; /* 青磁色 Seiji-iro (Celadon) */
+--color3: #B3CBBF; /* 白緑 Byakuroku (Pale Jade) */
+--color4: #95B8A9; /* 青竹色 Aotake-iro (Bamboo Green) */
+--color5: #384D48; /* 千歳緑 Chitosemidori (Darkest strip) */
+}
+/* Palette G */
+:global(.fog-over-rice-fields) {
+--color1: #5E6654; /* 利休茶 Rikyu-cha (Muted Olive) */
+--color2: #E0E5D4; /* 山葵色 Wasabi-iro (Wasabi Green) */
+--color3: #C7D3B9; /* 若苗色 Wakanai-iro (Young Seedling Green) */
+--color4: #B3C4A2; /* 苗色 Nae-iro (Rice Seedling Green) */
+--color5: #5E6654; /* 利休茶 Rikyu-cha (Darkest strip) */
+}
+/* Palette H */
+:global(.stone-garden) {
+--color1: #5C5C5C; /* 鉄色 Tetsu-iro (Iron Gray) */
+--color2: #E5E5E5; /* 白鼠 Shironeri (Light Gray) */
+--color3: #CCCCCC; /* 銀鼠 Ginnezumi (Silver Gray) */
+--color4: #B2B2B2; /* 灰色 Haiiro (Ash Gray) */
+--color5: #5C5C5C; /* 鉄色 Tetsu-iro (Darkest strip) */
+}
+/* Palette I */
+:global(.dew-in-the-grove) {
+--color1: #2A4F4D; /* 深緑 Shinryoku (Deep Green) */
+--color2: #D1E3DE; /* 薄青緑 Usu-aomidori (Pale Blue-Green) */
+--color3: #B6D2CB; /* 水浅葱 Mizuasagi (Light Blue-Green) */
+--color4: #8EBBB5; /* 青碧 Seiheki (Bluish Green) */
+--color5: #2A4F4D; /* 深緑 Shinryoku (Darkest strip) */
+}
+/* Palette J */
+:global(.koi-fish) {
+--color1: #D83A1F; /* 緋色 Hi-iro (Vermilion) */
+--color2: #F6F6F4; /* 胡粉色 Gofun-iro (White Pigment) */
+--color3: #FFA963; /* 柑子色 Kouji-iro (Orange) */
+--color4: #F8D4AE; /* 飴色 Ame-iro (Candy Beige) */
+--color5: #2C2C2C; /* 黒 Kuro (Black - markings) */
+}
+/* Palette K */
+:global(.seigaiha) {
+--color1: #355D8E; /* 群青 Gunjo (Ultramarine) */
+--color2: #F1F4F8; /* 白花色 Shirahana-iro (Very Pale Blue) */
+--color3: #A8C5DB; /* 空色 Sorairo (Sky Blue) */
+--color4: #7DA4C3; /* 淡縹 Awahanada (Light Indigo) */
+--color5: #1E3B5A; /* 藍鉄 Aitetsu (Dark Indigo) */
+}
+/* Palette L */
+:global(.hanafuda) {
+--color1: #9C1C1C; /* 深緋 Fukahi (Deep Scarlet) */
+--color2: #FFF8E7; /* 卵色 Tamago-iro (Eggshell) */
+--color3: #F8D64E; /* 金色 Kin-iro (Gold) */
+--color4: #D59B3D; /* 黄唐茶 Kigaracha (Brown-Yellow) */
+--color5: #3E2F27; /* 黒鳶 Kurotobi (Dark Brown) */
+}
+/* Palette M */
+:global(.furisode-traditional-kimono) {
+--color1: #A22041; /* 韓紅花 Karamomo (Pomegranate Red) */
+--color2: #FFF1ED; /* 白緋 Shirohi (Pale Pink-White) */
+--color3: #DDAADD; /* 紫水晶 Murasaki Suisho (Amethyst) */
+--color4: #F4C95D; /* 中黄 Chuuki (Middle Yellow) */
+--color5: #3A6B64; /* 青緑 Aomidori (Blue-Green) */
+}
+/* Palette N */
+:global(.crane-pine) {
+--color1: #C73E3A; /* 赤紅 Akabeni (Bright Red) */
+--color2: #F9F9F7; /* 胡粉色 Gofun-iro (White Pigment) */
+--color3: #C5C59E; /* 利休白茶 Rikyu-shiracha (Tea Beige) */
+--color4: #A0B287; /* 松葉色 Matsuba-iro (Pine Needle Green) */
+--color5: #2D4739; /* 深緑 Shinryoku (Deep Green) */
+}
+/* Palette O */
+:global(.sakura-ume-blossoms) {
+--color1: #D25B70; /* 梅重 Ume-gasane (Plum Layered Pink) */
+--color2: #FFF5F5; /* 白梅色 Shiraume-iro (White Plum Blossom) */
+--color3: #F7CACA; /* 桃色 Momoiro (Peach Pink) */
+--color4: #E2A3B4; /* 薄紅 Usukurenai (Light Crimson) */
+--color5: #5C3C35; /* 檜皮色 Hiwada-iro (Cypress Bark Brown) */
+}
+/* Palette P */
+:global(.wagara-asanoha) {
+--color1: #748C69; /* 青白橡 Aoshirotsurubami (Cool Green-Brown) */
+--color2: #F6F3EF; /* 白茶 Shiracha (Beige-White) */
+--color3: #D5D9CB; /* 裏葉色 Uraha-iro (Underside Leaf Green) */
+--color4: #C0D1C2; /* 青竹色 Aotake-iro (Bamboo Green) */
+--color5: #3D4F58; /* 藍鉄 Aitetsu (Iron Blue) */
+}
+/* Palette Q */
+:global(.matcha-ceramics) {
+--color1: #8A9A5B; /* 若草色 Wakakusa-iro (Young Grass Green) */
+--color2: #F5F4F0; /* 白鼠 Shironeri (Light Warm White) */
+--color3: #C7CDA0; /* 利休茶 Rikyu-cha (Muted Green Tea) */
+--color4: #A3B18A; /* 抹茶色 Matcha-iro (Matcha Green) */
+--color5: #5B5847; /* 海松色 Miru-iro (Mossy Brown-Green) */
+}
+/* Palette R */
+:global(.tsuru-gold-brocade) {
+--color1: #B43438; /* 紅緋 Benihi (Safflower Crimson) */
+--color2: #F8F0E3; /* 白茶 Shiracha (Cream White) */
+--color3: #F7DE75; /* 金糸色 Kinshi-iro (Golden Thread) */
+--color4: #D9B44A; /* 黄唐茶 Kigaracha (Earthy Yellow) */
+--color5: #432922; /* 檜皮色 Hiwada-iro (Cypress Bark Brown) */
+}
+/* Palette S */
+:global(.tsuyu) {
+--color1: #5D7392; /* 青藤色 Aofuji-iro (Bluish Purple) */
+--color2: #E8F0F7; /* 白群色 Byakugun-iro (Pale Cloud Blue) */
+--color3: #B3C8E3; /* 空色 Sorairo (Sky Blue) */
+--color4: #A0ACC3; /* 鉄紺 Tetsukon (Muted Steel Blue) */
+--color5: #394554; /* 藍鼠 Ainezumi (Indigo Gray) */
+}
+/* Palette T */
+:global(.momiji) {
+--color1: #A74232; /* 深緋 Fukahi (Deep Scarlet) */
+--color2: #F8F3E6; /* 白茶 Shiracha (Warm Pale) */
+--color3: #E19856; /* 柿色 Kaki-iro (Persimmon Orange) */
+--color4: #DAB760; /* 玉蜀黍色 Tomorokoshi-iro (Corn Yellow) */
+--color5: #4E392F; /* 栗皮茶 Kurikawa-cha (Chestnut Brown) */
+}
+/* Palette U */
+:global(.torii-fushimi-inari) {
+--color1: #D84F2A; /* 朱色 Shu-iro (Torii Vermilion) */
+--color2: #F5F3ED; /* 白練 Shironezumi (Stone Off-White) */
+--color3: #F2B591; /* 洗朱 Araishu (Light Vermilion) */
+--color4: #9BAA7F; /* 萌黄 Moegi (Sprout Moss Green) */
+--color5: #443B34; /* 黒茶 Kurocha (Dark Brown Earth) */
+}
+/* Palette V */
+:global(.kura-storehouse) {
+--color1: #3C3C3C; /* 墨色 Sumi-iro (Ink Black) */
+--color2: #F6F6F3; /* 白鼠 Shironezumi (Plaster White) */
+--color3: #C8B7A6; /* 木蘭色 Mokuran-iro (Magnolia Beige) */
+--color4: #8A7968; /* 黄枯茶 Karecha (Faded Yellow Brown) */
+--color5: #2C2A28; /* 鉄黒 Tetsuguro (Iron Black) */
+}
+/* Palette W */
+:global(.temple-wood-gold-leaf) {
+--color1: #C5A900; /* 金色 Kin-iro (Temple Gold) */
+--color2: #F8F5E5; /* 白茶 Shiracha (Cream White) */
+--color3: #B49C6E; /* 山吹茶 Yamabukicha (Burnished Gold) */
+--color4: #99835D; /* 利休茶 Rikyu-cha (Old Wood Brown) */
+--color5: #4B3B29; /* 黒茶 Kurocha (Dark Timber) */
+}
+/* Palette X */
+:global(.machiya-townhouse) {
+--color1: #7A5C50; /* 鳶色 Tobi-iro (Reddish Brown Plaster) */
+--color2: #F3EEE8; /* 灰白 Kaihaku (Earthen White) */
+--color3: #BFA88F; /* 小麦色 Komugi-iro (Wheat Beige) */
+--color4: #998D7A; /* 錆浅葱 Sabiasagi (Muted Teal-Gray) */
+--color5: #3B3A36; /* 鉄紺 Tetsukon (Iron Charcoal) */
+}
+/* Palette Y */
+:global(.shrine-accents) {
+--color1: #9F2F3F; /* 赤紅 Akabeni (Shrine Red) */
+--color2: #EEEDE9; /* 白鼠 Shironeri (Stone Pale) */
+--color3: #D9A441; /* 黄金色 Ougon-iro (Antique Gold) */
+--color4: #B4814F; /* 黄橡 Kibicha (Muted Ochre) */
+--color5: #1C1C1C; /* 漆黒 Shikkoku (Jet Black Lacquer) */
+}
+/* Palette Z */
+:global(.tanabata-festival) {
+--color1: #726AB3; /* 藤紫 Fujimurasaki (Wisteria Violet) */
+--color2: #F2F7FF; /* 白群色 Byakugun-iro (Milky Sky) */
+--color3: #FAE0F1; /* 薄紅梅 Usukoubai (Faint Pink Plum) */
+--color4: #A2CBE1; /* 空色 Sorairo (Sky Blue) */
+--color5: #3A3652; /* 藍墨茶 Aizumicha (Ink Indigo) */
+}
+/* Palette AA */
+:global(.obon-festival) {
+--color1: #D04C2F; /* 緋色 Hi-iro (Bonfire Red) */
+--color2: #FDF6E7; /* 白茶 Shiracha (Lantern White) */
+--color3: #F8B254; /* 蜜柑色 Mikan-iro (Orange Lantern) */
+--color4: #B5835A; /* 小麦色 Komugi-iro (Wheat Brown) */
+--color5: #423426; /* 黒橡 Kurotsurubami (Dark Brown Shadow) */
+}
+/* Palette AB */
+:global(.sumi-e) {
+--color1: #8A8C87; /* 鈍色 Nibi-iro (Dull Silver-Gray) */
+--color2: #F6F5F3; /* 白鼠 Shironeri (Off-White) */
+--color3: #D7D4CC; /* 薄墨 Usuzumi (Pale Ink Gray) */
+--color4: #A8A49A; /* 利休鼠 Rikyu-nezumi (Wabi Gray-Green) */
+--color5: #2F2F2F; /* 墨 Sumi (Ink Black) */
+}
+/* Palette AC */
+:global(.modern-pastel-kimono) {
+--color1: #E8A9A1; /* 退紅 Akai (Faded Pink) */
+--color2: #FFFDF9; /* 絹色 Kinu-iro (Silk White) */
+--color3: #F9DADA; /* 桜鼠 Sakuranezumi (Cherry Mouse Pink) */
+--color4: #B4D7D1; /* 青磁色 Seiji-iro (Celadon Green) */
+--color5: #6D7A8C; /* 青鈍 Aonibi (Blue-Grey) */
+}
+/* Palette AD */
+:global(.fireflies-summer-night) {
+--color1: #C4AC24; /* 鶸茶 Hiwacha (Firefly Yellow) */
+--color2: #F3F6F1; /* 白緑 Shirorokushoku (Mist White) */
+--color3: #C6D5B9; /* 柳色 Yanagi-iro (Willow Green) */
+--color4: #8FA39B; /* 青磁鼠 Seijinezumi (Mossy Gray-Green) */
+--color5: #2D3A32; /* 青墨 Aosumi (Dark Forest Ink) */
+}
