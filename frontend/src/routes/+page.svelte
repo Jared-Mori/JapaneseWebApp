@@ -71,7 +71,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('seigaiha.svg');
+      background-image: url('/seigaiha.svg');
       background-size: auto 100%; /* 5 cards × 100% = 500% */
       background-repeat: repeat-x;
       background-position: 0 0;
@@ -86,7 +86,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('fuji_background.png');
+      background-image: url('/fuji_background.png');
       background-size: 500% 100%; /* 5 cards × 100% = 500% */
       background-repeat: no-repeat;
       opacity: 0.92;
