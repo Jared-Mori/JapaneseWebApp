@@ -1,3 +1,11 @@
+/* Test Palette */
+:global(.test-palette) {
+--color1: #323986; /* Bright Red */
+--color2: #fae9d7; /* Bright Green */
+--color3: #fae9d7; /* Bright Blue */
+--color4: #fb2e41; /* Light Gray */
+--color5: #191d46; /* Black */
+}
 /* Palette A */
 :global(.warm-spring) {
 --color1: #E03C8A; /* 今様色 Imayou-iro (Contemporary Pink) */

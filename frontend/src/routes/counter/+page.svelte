@@ -118,6 +118,7 @@
       position: fixed;
       top: 0;
       left: 0;
+      color: var(--color4);
   }
   #score {
       position: absolute;
@@ -126,8 +127,14 @@
   h1 {
       text-align: center;
       font-family: Noto Sans JP, sans-serif;
-      color: var(--header);
       font-size: 28px;
+  }
+  #question {
+      text-align: center;
+      font-family: Noto Sans JP, sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      margin: 20px 0;
   }
   input[type="text"] {
       border: none;
@@ -150,7 +157,11 @@
       font-size: 20px;
       font-weight: 400;
       font-style: normal;
-      color: var(--header);
+      color: var(--color1);
+  }
+  #input-field::placeholder {
+      color: var(--color1);
+      opacity: 0.7;
   }
   @keyframes shake {
     0% { transform: translateX(0); }

@@ -27,7 +27,7 @@
     <nav>
         <a href="/" class="home-link">Home</a>
         <div class="nav-links">
-            <a href="/counter">Counter</a>
+            <a href="/counter" class="link">Counter</a>
             {#if session}
                 <ProfilePopup {supabase} />
             {:else}
@@ -43,12 +43,20 @@
 
 <style>
     @import '../lib/styles/themes.css';
+    :root {
+        --color6: #4f0e26;
+        --color7: #2b352c;
+        --color8: #f0f0f0;
+        --color9: #b69076;
+        --color10: #2f2a2e;
+        --color11: #9a4d4d;
+    }
     nav {
         padding: 0;
         height: 6vh;
         width: 100vw;
         text-align: center;
-        background-color: var(--color1);
+        background-color: var(--color5);
         position: fixed;
         margin: 0;
         z-index: 1000;
@@ -58,7 +66,7 @@
         align-items: center;
         justify-content: space-between;
         font-family: 'Noto Sans JP', sans-serif;
-        color: white;
+        color: var(--color5);
         font-weight: 400;
         font-size: 1.2rem;
         box-shadow: 0 8px 32px rgba(0,0,0,0.18);
@@ -71,7 +79,7 @@
         margin-right: 15vw;
     }
     .home-link {
-        color: white;
+        color: var(--color2);
         font-weight: bold;
         font-size: 1.5rem;
         text-decoration: none;
@@ -80,13 +88,22 @@
     .container {
         background-color: var(--color2);
         width: 100vw;
-        height: 100vh;
+        height: 94vh;
         display: flex;
         position: fixed;
         font-family: 'Noto Sans JP', sans-serif;
         margin: 0;
         padding: 0;
         left: 0;
-        top: 0;
+        top: 6vh;
+    }
+    .link {
+        color: var(--color4);
+        background-color: var(--color2);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 1.2rem;
+        padding: 0.25rem .5rem;
+        border-radius: 0.45rem;
     }
 </style>

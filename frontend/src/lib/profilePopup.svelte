@@ -64,7 +64,7 @@
   position: absolute;
   right: 0;
   top: 110%;
-  background: var(--card-bg, #fff);
+  background: var(--color2);
   border: 1px solid #ddd;
   border-radius: 0.5rem;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
@@ -77,12 +77,12 @@
 
 .menu a {
   padding: 0.5rem 1rem;
-  color: #333;
+  color: white;
   text-decoration: none;
   transition: background 0.15s;
 }
 .menu a:hover {
-  background: #f5f5f5;
+  background: var(--color3);
 }
 
 .user-email {
