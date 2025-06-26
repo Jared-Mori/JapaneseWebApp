@@ -1,176 +1,129 @@
 <script>
-  import Card from '$lib/card.svelte'
+  import { goto } from '$app/navigation';
+
+  let flipped = false;
 </script>
 
 <div class="container">
-  <div class="card">
-    <div class="square">
-      <p class="line1">最上川</p>
-      <p class="line2">あつめて早し</p>
-      <p class="line3">五月雨を</p>
-    </div>
+  <div class="card-wrapper">
+    <button class="card" onclick={() => goto('/profile')}>
+        <div class="card-face front">
+          <p class="line1">最上川</p>
+          <p class="line2">あつめて早し</p>
+          <p class="line3">五月雨を</p>
+        </div>
+        <div class="card-face back">
+          <p class="line1">最上川</p>
+          <p class="line2">あつめて早し</p>
+          <p class="line3">五月雨を</p>
+        </div>
+    </button>
   </div>
-    <div class="card">
-    <div class="square">
-      <p>横倉　　　健一</p>
-    </div>
+    <div class="card-wrapper">
+    <button class="card" onclick={() => goto('/profile')}>
+        <div class="card-face front">横倉　　　健一</div>
+        <div class="card-face back">裏の顔</div>
+    </button>
   </div>
-    <div class="card">
-    <div class="square">
-      <p>Lorem</p>
-    </div>
+    <div class="card-wrapper">
+    <button class="card" onclick={() => goto('/profile')}>
+        <div class="card-face front">横倉　　　健一</div>
+        <div class="card-face back">裏の顔</div>
+    </button>
   </div>
-    <div class="card">
-    <div class="square">
-      <p>Lorem</p>
-    </div>
+    <div class="card-wrapper">
+    <button class="card" onclick={() => goto('/profile')}>
+        <div class="card-face front">横倉　　　健一</div>
+        <div class="card-face back">裏の顔</div>
+    </button>
   </div>
-    <div class="card">
-    <div class="square">
-      <p>Lorem</p>
-    </div>
+    <div class="card-wrapper">
+    <button class="card" onclick={() => goto('/profile')}>
+        <div class="card-face front">横倉　　　健一</div>
+        <div class="card-face back">裏の顔</div>
+    </button>
   </div>
 </div>
 
 <style>
     .container {
-      background-color: var(--color1);
       width: 100vw;
       height: 94vh;
       display: flex;
       flex-direction: row;
-      gap: 2rem;
+      gap: 2vw;
       position: fixed;
       justify-content: center;
-      font-family: 'Noto Sans JP', sans-serif;
       margin: 0;
       left: 0;
-      top: 6vh;
+      top: 9vh;
+      z-index: 2;
+    }
+    .card-wrapper {
+      perspective: 1000px;
+      height: 35vw;
+      width: 15vw;
     }
     .card {
+      border: none;
       position: relative;
-      height: 70vh;
-      width: 15vw;
+      height: 100%;
+      width: 100%;
       display: flex;
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      border: 3px solid var(--color13);
       box-shadow: 
         0 16px 48px rgba(0, 0, 0, 0.3),
         0 32px 96px rgba(0, 0, 0, 0.15);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-10px);
-      transform: scale(1.05);
-    }
-    /* First image (100% opacity) */
-    .card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('/seigaiha.svg');
-      background-size: auto 100%; /* 5 cards × 100% = 500% */
-      background-repeat: repeat-x;
-      background-position: 0 0;
-      opacity: 1;
-      z-index: 1;
-    }
-    /* Second image (50% opacity) */
-    .card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      transition: transform 0.6s ease;
+      will-change: transform;
+      transform: translateZ(0);
+      transform-style: preserve-3d;
       background-image: url('/fuji_background.png');
-      background-size: 500% 100%; /* 5 cards × 100% = 500% */
-      background-repeat: no-repeat;
-      opacity: 0.92;
-      z-index: 2;
+      background-size: 75vw calc(100% + 2px);
     }
-    .square {
-      width: 100%;
-      max-height: 80%;
-      margin-top: 20%;
-      display: flex;
-      justify-content: center;
-      z-index: 3;
-      filter: saturate(0.7) contrast(0.9) brightness(0.95);
+    .card-wrapper:hover .card {
+      transform: translateY(-10px) scale(1.05) rotateY(180deg);
     }
-    .square::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.05);
+    .line1 {
+      margin-top: 8vw;
+    }
+    .line2 {
+      margin-top: 4vw;
     }
     p {
       margin: 0;
-      font-size: 4rem;
+      padding: 0;
+    }
+    .card-face {
+      position: absolute;
+      max-height: 100%;
+      align-items: left;
+      margin: 0;
+      margin-top: 20%;
+      font-family: var(--hina-mincho);
+      font-size: 3vw;
       font-weight: 700;
-      font: 'Noto Sans JP', sans-serif;
       text-orientation: upright;
+      text-align: left;
       writing-mode: vertical-lr;
+      backface-visibility: hidden;
     }
-    .card:nth-child(1) .square {
-      color: var(--color10);
+    .front {
+      z-index: 2;
     }
-    .card:nth-child(2) .square {
-      color: var(--color7);
+    .back {
+      transform: rotateY(180deg);
     }
-    .card:nth-child(3) .square {
-      color: var(--color8);
-    }
-    .card:nth-child(4) .square {
-      color: var(--color6);
-    }
-    .card:nth-child(5) .square {
-      color: var(--color9);
-    }
-    .card:nth-child(1) {
-      margin-top: 1rem;
-    }
-    .card:nth-child(2) {
-      margin-top: 4rem;
-    }
-    .card:nth-child(3) {
-      margin-top: 7rem;
-    }
-    .card:nth-child(4) {
-      margin-top: 10rem;
-    }
-    .card:nth-child(5) {
-      margin-top: 13rem;
-    }
-    /* Position each card's slice */
-    .card:nth-child(1)::before,
-    .card:nth-child(1)::after {
-      background-position: 0% 0; /* Show leftmost 20% */
-    }
-
-    .card:nth-child(2)::before,
-    .card:nth-child(2)::after {
-      background-position: 25% 0; /* Show next 20% */
-    }
-
-    .card:nth-child(3)::before,
-    .card:nth-child(3)::after {
-      background-position: 50% 0; /* Show middle 20% */
-    }
-
-    .card:nth-child(4)::before,
-    .card:nth-child(4)::after {
-      background-position: 75% 0; /* Show next 20% */
-    }
-
-    .card:nth-child(5)::before,
-    .card:nth-child(5)::after {
-      background-position: 100% 0; /* Show rightmost 20% */
-    }
+    .card-wrapper:nth-child(1) .card { color: var(--color7);  background-position: 0% 0;  }
+    .card-wrapper:nth-child(2) .card { color: var(--color10); background-position: 25% 0;  }
+    .card-wrapper:nth-child(3) .card { color: var(--color9); background-position: 50% 0;  }
+    .card-wrapper:nth-child(4) .card { color: var(--color6); background-position: 75% 0;  }
+    .card-wrapper:nth-child(5) .card { color: var(--color8); background-position: 100% 0; }
+    .card-wrapper:nth-child(1) {margin-top: 0;}
+    .card-wrapper:nth-child(2) {margin-top: 2.5rem;}
+    .card-wrapper:nth-child(3) {margin-top: 5rem;}
+    .card-wrapper:nth-child(4) {margin-top: 7.5rem;}
+    .card-wrapper:nth-child(5) {margin-top: 10rem;}
   </style>

@@ -24,16 +24,7 @@
 <svelte:window on:click={handleClickOutside} />
 
 <div class="profile-menu" bind:this={menuRef}>
-  <button class="profile-icon" onclick={toggleMenu} aria-label="Open profile menu">
-
-    <!-- Simple user icon (SVG) -->
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-      <circle cx="16" cy="16" r="16" fill="#ccc"/>
-      <circle cx="16" cy="13" r="6" fill="#fff"/>
-      <ellipse cx="16" cy="24" rx="8" ry="5" fill="#fff"/>
-    </svg>
-
-  </button>
+  <div class="profile-button">私</div>
   {#if open}
     <div class="menu">
       <div class="user-email">{supabase.auth.user?.email}</div>
@@ -50,16 +41,19 @@
   position: relative;
   display: inline-block;
 }
-
-.profile-icon {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.25rem;
-  border-radius: 50%;
-  transition: background 0.2s;
+.profile-button {
+  font-family: var(--sawarabi-mincho);
+  font-size: 1.25rem;
+  color: #2c2c2c;
+  background-color: #f2ebe2;
+  border-radius: 9999px;
+  border: 2px solid #b03a48;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .menu {
   position: absolute;
   right: 0;

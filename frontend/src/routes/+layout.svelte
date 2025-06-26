@@ -1,8 +1,11 @@
 <script lang='ts'>
   import { invalidate } from '$app/navigation'
   import { onMount } from 'svelte'
-  import ProfilePopup from '$lib/profilePopup.svelte'
   import { theme } from '$lib/stores/theme'
+  import { goto } from '$app/navigation'
+
+  import ProfilePopup from '$lib/profilePopup.svelte'
+  import Hanafuda from '$lib/hanafuda.svelte';
 
   let { data, children } = $props()
   let { session, supabase } = $derived(data)
@@ -17,17 +20,12 @@
   });
 </script>
 
-<svelte:head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
-</svelte:head>
-
 <div class={ $theme }>
     <nav>
-        <a href="/" class="home-link">Home</a>
+        <Hanafuda width={10} card="/hanafuda/10.svg">
+            <button class="home" onclick={() => goto('/')} aria-label="Home"></button>
+        </Hanafuda>
         <div class="nav-links">
-            <a href="/counter" class="link">Counter</a>
             {#if session}
                 <ProfilePopup {supabase} />
             {:else}
@@ -35,7 +33,7 @@
             {/if}
         </div>
     </nav>
-    <div class="container">
+    <div class="container" id="background">
         {@render children()}
     </div>
 </div>
@@ -43,20 +41,22 @@
 
 <style>
     @import '../lib/styles/themes.css';
+    @import '../lib/styles/fonts.css';
     :root {
         --color6: #4f0e26;
         --color7: #2b352c;
-        --color8: #f0f0f0;
+        --color8: #061c3a;
         --color9: #b69076;
         --color10: #2f2a2e;
         --color11: #9a4d4d;
+        --color12: #d2382d;
+        --color13: #1b1b1b;
     }
     nav {
         padding: 0;
-        height: 6vh;
+        height: 5vh;
         width: 100vw;
         text-align: center;
-        background-color: var(--color5);
         position: fixed;
         margin: 0;
         z-index: 1000;
@@ -65,37 +65,60 @@
         display : flex;
         align-items: center;
         justify-content: space-between;
-        font-family: 'Noto Sans JP', sans-serif;
-        color: var(--color5);
-        font-weight: 400;
-        font-size: 1.2rem;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        background-color: var(--color13);
+        opacity: 1;
+        border-bottom: 4px solid var(--color12);
     }
     .nav-links {
+        color: var(--color5);
+        font-family: var(--hina-mincho);
+        font-weight: 400;
+        font-size: 3rem;
+        z-index: 3;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 1rem;
-        margin-right: 15vw;
+        margin-right: 1vw;
     }
-    .home-link {
-        color: var(--color2);
-        font-weight: bold;
-        font-size: 1.5rem;
-        text-decoration: none;
-        margin-left: 15vw;
+    .home {
+        color: #a62329;
+        font-family: var(--hina-mincho);
+        font-weight: 400;
+        font-size: 2.3rem;
+        margin-left: 1vw;
+        z-index: 3;
+        background: none;
+        border: none;
     }
     .container {
-        background-color: var(--color2);
         width: 100vw;
-        height: 94vh;
+        height: 100vh;
         display: flex;
         position: fixed;
-        font-family: 'Noto Sans JP', sans-serif;
         margin: 0;
         padding: 0;
         left: 0;
-        top: 6vh;
+        top: 0vh;
+    }
+    .container::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('/paper.jpg');
+        background-size: cover;
+        opacity: .3;
+        z-index: -1;
+    }
+    .container::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color2);
+        opacity: .4;
+        z-index: -2;
     }
     .link {
         color: var(--color4);
