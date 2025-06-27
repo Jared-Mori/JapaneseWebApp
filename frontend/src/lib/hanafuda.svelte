@@ -3,7 +3,7 @@
 </script>
 
 <div class="hanafuda"
-    style:width={width ? `${width}vw` : '4vw'}
+    style:width={width ? `${width}vh` : '100%'}
 >
     <div class="hanafuda-content"
         style:background-image={card ? `url(${card})` : 'none'}
@@ -22,9 +22,6 @@
       background-size: cover;
       background-color: var(--color2);
       aspect-ratio: 13 / 21;
-    }
-    .hanafuda:hover {
-      transform: translateY(8vh);
     }
     .hanafuda-content {
       width: 100%;

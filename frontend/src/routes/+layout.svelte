@@ -4,8 +4,8 @@
   import { theme } from '$lib/stores/theme'
   import { goto } from '$app/navigation'
 
-  import ProfilePopup from '$lib/profilePopup.svelte'
   import Hanafuda from '$lib/hanafuda.svelte';
+  import Flipcard from '$lib/flipcard.svelte';
 
   let { data, children } = $props()
   let { session, supabase } = $derived(data)
@@ -22,12 +22,35 @@
 
 <div class={ $theme }>
     <nav>
-        <Hanafuda width={10} card="/hanafuda/10.svg">
-            <button class="home" onclick={() => goto('/')} aria-label="Home"></button>
-        </Hanafuda>
-        <div class="nav-links">
+        <div class="home-button">
+            <Flipcard hoverFlip={true} width={6}>
+                {#snippet front()}
+                    <Hanafuda width={6} card="/hanafuda/32.svg">
+                        <button class="home" onclick={() => goto('/')} aria-label="Home"></button>
+                    </Hanafuda>
+                {/snippet}
+                {#snippet back()}
+                    <Hanafuda width={6} card="/hanafuda/83.svg">
+                        <button class="home" onclick={() => goto('/')} aria-label="Home">家</button>
+                    </Hanafuda>
+                {/snippet}
+            </Flipcard> 
+        </div>
+
+        <div class="nav-button">
             {#if session}
-                <ProfilePopup {supabase} />
+                <Flipcard hoverFlip={true} width={6}>
+                    {#snippet front()}
+                        <Hanafuda width={6} card="/hanafuda/10.svg">
+                            <button class="profile" onclick={() => goto('/profile')} aria-label="Profile"></button>
+                        </Hanafuda>
+                    {/snippet}
+                    {#snippet back()}
+                        <Hanafuda width={6} card="/hanafuda/83.svg">
+                            <button class="profile" onclick={() => goto('/profile')} aria-label="Profile">自</button>
+                        </Hanafuda>
+                    {/snippet}
+                </Flipcard> 
             {:else}
                 <a href="/auth">Login</a>
             {/if}
@@ -54,7 +77,7 @@
     }
     nav {
         padding: 0;
-        height: 5vh;
+        height: 3.5vw;
         width: 100vw;
         text-align: center;
         position: fixed;
@@ -63,33 +86,29 @@
         top: 0;
         left: 0;
         display : flex;
-        align-items: center;
         justify-content: space-between;
         background-color: var(--color13);
         opacity: 1;
         border-bottom: 4px solid var(--color12);
     }
-    .nav-links {
-        color: var(--color5);
-        font-family: var(--hina-mincho);
-        font-weight: 400;
-        font-size: 3rem;
-        z-index: 3;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        margin-right: 1vw;
+    .nav-button {
+        margin-right: 2vw;
+        margin-top: 2vh;
     }
-    .home {
+    .home-button {
+        margin-left: 2vw;
+        margin-top: 2vh;
+    }
+    .home, .profile {
         color: #a62329;
         font-family: var(--hina-mincho);
-        font-weight: 400;
-        font-size: 2.3rem;
-        margin-left: 1vw;
-        z-index: 3;
+        font-weight: 600;
+        font-size: 3rem;
+        width: 100%;
+        height: 100%;
         background: none;
         border: none;
+        padding: 0;
     }
     .container {
         width: 100vw;
